@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { socials } from '../constants';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
 import styles from '../styles';
 import { footerVariants } from '../utils/motion';
@@ -13,48 +13,61 @@ const Footer = () => (
     whileInView="show"
     className={`${styles.xPaddings} py-8 relative`}
   >
-    <div className="footer-gradient" />
-    <div className={`${styles.innerWidth} mx-auto flex flex-col gap-8`}>
-      <div className="flex items-center justify-between flex-wrap gap-5">
-        <h4 className="font-bold md:text-[64px] text-[44px] text-white">
-          Enter the Metaverse
-        </h4>
-        <button type="button" className="flex items-center h-fit py-4 px-6 bg-[#25618B] rounded-[32px] gap-[12px]">
-          <img
-            src="/headset.svg"
-            alt="headset"
-            className="w-[24px] h-[24px] object-contain"
-          />
-          <span className="font-normal text-[16px] text-white">
-            Enter Metaverse
-          </span>
-        </button>
-      </div>
+    <div className="" >
+      <footer className="bg-gray-900 text-gray-200 py-10">
+        <div className="container mx-auto px-6 lg:px-8 flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
+          {/* Logo and About Section */}
+          <div className='flex gap-3'>
+            <img src="/community logo.jpg" className="h-14 rounded-full" alt="Flowbite Logo" />
+            <div className="text-center lg:text-left">
+              <h2 className="text-3xl font-extrabold text-white">HelpHub</h2>
+              <p className="mt-2 text-gray-400 max-w-xs">
+                HelpHub is a community-driven platform for support, resources, and
+                connections. Empowering individuals to help one another.
+              </p>
+            </div>
+          </div>
 
-      <div className="flex flex-col">
-        <div className="mb-[50px] h-[2px] bg-white opacity-10" />
+          {/* New Navigation Section */}
+          <div className="text-center lg:text-left space-y-4">
+            <div className="flex justify-center lg:justify-start gap-8">
+              <a href="#" className="text-lg text-gray-400 hover:text-white transition duration-300">Home</a>
+              <a href="#" className="text-lg text-gray-400 hover:text-white transition duration-300">About Us</a>
+              <a href="#" className="text-lg text-gray-400 hover:text-white transition duration-300">Services</a>
+            </div>
+            <div className="flex justify-center lg:justify-start gap-8 mt-4">
+              <a href="#" className="text-lg text-gray-400 hover:text-white transition duration-300">Contact</a>
+              <a href="#" className="text-lg text-gray-400 hover:text-white transition duration-300">FAQs</a>
+              <a href="#" className="text-lg text-gray-400 hover:text-white transition duration-300">Blog</a>
+            </div>
+          </div>
 
-        <div className="flex items-center justify-between flex-wrap gap-4">
-          <h4 className="font-extrabold text-[24px] text-white">
-            METADROID
-          </h4>
-          <p className="font-normal text-[14px] text-white opacity-50">
-            Copyright © 2021 - 2022 Metadroid. All rights reserved.
-          </p>
-
-          <div className="flex gap-4">
-            {socials.map((social) => (
-              <a key={social.name} href={social.link}>
-                <img
-                  src={social.url}
-                  alt={social.name}
-                  className="w-[24px] h-[24px] object-contain"
-                />
-              </a>
-            ))}
+          {/* Social Media Icons */}
+          <div className="flex gap-6 mt-6">
+            <a href="#" className="text-gray-400 hover:text-white transition duration-300">
+              <FaFacebookF size={20} />
+            </a>
+            <a href="#" className="text-gray-400 hover:text-white transition duration-300">
+              <FaTwitter size={20} />
+            </a>
+            <a href="#" className="text-gray-400 hover:text-white transition duration-300">
+              <FaInstagram size={20} />
+            </a>
+            <a href="#" className="text-gray-400 hover:text-white transition duration-300">
+              <FaLinkedinIn size={20} />
+            </a>
           </div>
         </div>
-      </div>
+
+        {/* Divider */}
+        <div className="border-t border-gray-700 my-6"></div>
+
+        {/* Copyright Section */}
+        <div className="text-center text-gray-400 text-sm">
+          © {new Date().getFullYear()} HelpHub. All rights reserved.
+        </div>
+      </footer>
+
     </div>
   </motion.footer>
 );
